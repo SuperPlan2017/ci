@@ -3,7 +3,7 @@ base:
     file_roots: /devops/deployer/salt/roots
     formulas_roots: /devops/deployer/salt/formulas
     pillar_roots: /devops/deployer/salt/pillar
-  domain_name: daixinlian.com
+  domain_name: mmj.com
   networks:
     cidr: 192.168.10.0/24
     ip_interface: eth0

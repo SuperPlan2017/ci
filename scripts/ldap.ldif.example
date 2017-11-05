@@ -1,9 +1,9 @@
-dn: ou=people,dc=daixinlian,dc=com
+dn: ou=people,dc=mmj,dc=com
 ou: people
 description: All developers in organisation
 objectclass: organizationalunit
 
-dn: cn=miller,ou=people,dc=daixinlian,dc=com
+dn: cn=miller,ou=people,dc=mmj,dc=com
 objectclass: inetOrgPerson
 cn: miller
 displayName: Miller Ming
@@ -11,18 +11,18 @@ sn: miller
 uid: miller
 userpassword: miller
 homephone: 555-111-2222
-mail: miller@daixinlian.com
+mail: miller@mmj.com
 description: Miller Ming
 ou: people
 
-dn: cn=idevops-ci,ou=people,dc=daixinlian,dc=com
+dn: cn=idevops-ci,ou=people,dc=mmj,dc=com
 objectclass: inetOrgPerson
 cn: idevops-ci
 displayName: Continuous integration
 sn: idevops-ci
 uid: idevops-ci
-userpassword: zhu88jie
+userpassword: Mj315868
 homephone: 555-111-2222
-mail: idevops-ci@daixinlian.com
+mail: idevops-ci@mmj.com
 description: Continuous integration
 ou: people

@@ -1,2 +1,2 @@
 docker:
-  registry: docker-registry.daixinlian.com:5000
+  registry: docker-registry.mmj.com:5000

@@ -1,4 +1,4 @@
-# EL BigData Platform Environment Deployer
+# Devops Environment Deployer
 
 ## Prerequisite
 
@@ -74,7 +74,7 @@ jenkins              | latest   | docker-registry.daixinlian.com:5000/jenkins   
 
   - Build gerrit image:
 ```
-$ git clone https://github.com/idevops-net/ci.git
+$ git clone https://github.com/SuperPlan2017/docker.git
 $ cd ci/docker/docker-gerrit
 $ wget https://gerrit-releases.storage.googleapis.com/gerrit-2.11.2.war
 $ docker build -t docker-registry.daixinlian.com:5000/gerrit:0.0.1 --force-rm=true ./

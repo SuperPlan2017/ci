@@ -1,4 +1,4 @@
 ssl:
-  key_folder: /home/data/ssl_keys
-  crt_file: daixinlian.crt
-  key_file: daixinlian.key
+  key_folder: /data/ssl_keys
+  crt_file: mmj.crt
+  key_file: mmj.key

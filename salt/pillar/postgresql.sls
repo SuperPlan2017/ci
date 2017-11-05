@@ -1,5 +1,5 @@
 postgresql:
-  data_volume: /home/data/postgresql
+  data_volume: /data/postgresql
   image_version: 9.4-2
   port: 5432
   container_name: postgresql-gitlab

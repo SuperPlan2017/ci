@@ -9,13 +9,13 @@ devops:
       - 'redis'
       - 'gerrit'
   nodes:
-    bd001.daixinlian.com:
+    bd001.mmj.com:
       roles:
         - firstbox
-    bd002.daixinlian.com:
+    bd002.mmj.com:
       roles:
         - ldap
         - jenkins
-    bd003.daixinlian.com:
+    bd003.mmj.com:
       roles:
         - git
