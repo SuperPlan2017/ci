@@ -1,6 +1,13 @@
 # Devops Environment Deployer 
    - Use saltstack Devops Environment Deployer on docker
-
+   - Host List
+   
+|      host ip       |             hostname                        |  
+---------------------|---------------------------------------------|
+192.168.23.138       |bd004.mmj.com  bd004 docker-registry.mmj.com |
+192.168.23.139       |bd005.mmj.com  bd005                         |
+192.168.23.140       |bd006.mmj.com  bd006                         | 
+ 
 ## Prerequisite
 
 * Hardware and OS
