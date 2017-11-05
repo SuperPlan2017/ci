@@ -61,61 +61,61 @@ $ docker run -d -p 5000:5000 \
 ```
 
 * Pull the follwing docker images into the local docker registry:
-```Note: The docker-registry.daixinlian.com should be reachable or add it into the /etc/hosts. ```
+```Note: The docker-registry.mmj.com should be reachable or add it into the /etc/hosts. ```
 
 Docker Hub Image     |  Tage    | Local Registry Image                                | Tag
 ---------------------|----------|-----------------------------------------------------|-------
-osixia/phpldapadmin  | latest   | docker-registry.daixinlian.com:5000/phpldapadmin:0.7.1     | 0.7.1
-nickstenning/slapd   | latest   | docker-registry.daixinlian.com:5000/sladp                  | latest
-sameersbn/postgresql | 9.4-2    | docker-registry.daixinlian.com:5000/postgresql:9.4-2       | 9.4-2
-sameersbn/redis      | latest   | docker-registry.daixinlian.com:5000/redis                  | latest
-sameersbn/gitlab     | 7.13.0   | docker-registry.daixinlian.com:5000/gitlab:7.13.0          | 7.13.0
-jenkins              | latest   | docker-registry.daixinlian.com:5000/jenkins                | latest
+osixia/phpldapadmin  | latest   | docker-registry.mmj.com:5000/phpldapadmin:0.7.1     | 0.7.1
+nickstenning/slapd   | latest   | docker-registry.mmj.com:5000/sladp                  | latest
+sameersbn/postgresql | 9.4-2    | docker-registry.mmj.com:5000/postgresql:9.4-2       | 9.4-2
+sameersbn/redis      | latest   | docker-registry.mmj.com:5000/redis                  | latest
+sameersbn/gitlab     | 7.13.0   | docker-registry.mmj.com:5000/gitlab:7.13.0          | 7.13.0
+jenkins              | latest   | docker-registry.mmj.com:5000/jenkins                | latest
 
   - Build gerrit image:
 ```
 $ git clone https://github.com/SuperPlan2017/docker.git
 $ cd ci/docker/docker-gerrit
 $ wget https://gerrit-releases.storage.googleapis.com/gerrit-2.11.2.war
-$ docker build -t docker-registry.daixinlian.com:5000/gerrit:0.0.1 --force-rm=true ./
-$ docker push docker-registry.daixinlian.com:5000/gerrit:0.0.1
+$ docker build -t docker-registry.mmj.com:5000/gerrit:0.0.1 --force-rm=true ./
+$ docker push docker-registry.mmj.com:5000/gerrit:0.0.1
 ```
 
 Local Registry Image                              | Tag
 --------------------------------------------------|-------
-docker-registry.daixinlian.com:5000/gerrit           | 0.0.1
+docker-registry.mmj.com:5000/gerrit           | 0.0.1
 
   - Build jenkins image:
 ```
 $ cd ci/docker/docker-jenkins
 $ wget http://apache.arvixe.com/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip
-$ docker build -t docker-registry.daixinlian.com:5000/jenkins:0.0.1 --force-rm=true ./
-$ docker push docker-registry.daixinlian.com:5000/jenkins:0.0.1
+$ docker build -t docker-registry.mmj.com:5000/jenkins:0.0.1 --force-rm=true ./
+$ docker push docker-registry.mmj.com:5000/jenkins:0.0.1
 ```
 
 Local Registry Image                              | Tag
 --------------------------------------------------|-------
-docker-registry.daixinlian.com:5000/jenkins           | 0.0.1
+docker-registry.mmj.com:5000/jenkins           | 0.0.1
 
   - Build zookeeper image:
 ```
 $ cd ci/docker/docker-zookeeper
-$ docker build -t docker-registry.daixinlian.com:5000/zookeeper:0.0.1 --force-rm=true ./
-$ docker push docker-registry.daixinlian.com:5000/zookeeper:0.0.1
+$ docker build -t docker-registry.mmj.com:5000/zookeeper:0.0.1 --force-rm=true ./
+$ docker push docker-registry.mmj.com:5000/zookeeper:0.0.1
 ```
 Local Registry Image                              | Tag
 --------------------------------------------------|-------
-docker-registry.daixinlian.com:5000/zookeeper | 0.0.1
+docker-registry.mmj.com:5000/zookeeper | 0.0.1
 
   - Build kafka image:
 ```
 $ cd ci/docker/docker-kafka
-$ docker build -t docker-registry.daixinlian.com:5000/kafak:0.0.1 --force-rm=true ./
-$ docker push docker-registry.daixinlian.com:5000/kafka:0.0.1
+$ docker build -t docker-registry.mmj.com:5000/kafak:0.0.1 --force-rm=true ./
+$ docker push docker-registry.mmj.com:5000/kafka:0.0.1
 ```
 Local Registry Image                              | Tag
 --------------------------------------------------|-------
-docker-registry.daixinlian.com:5000/kafka | 0.0.1
+docker-registry.mmj.com:5000/kafka | 0.0.1
 
 ## Configuration
 
@@ -129,7 +129,7 @@ Update the pillar base on current environment, for example:
 
 * ldap_admin_pass in ```pillar/ldap.sls```
 
-Update the roles list ```pillar/nodes.sls``` base on your deployment plan, for example if you want to run all the ldap related on bd003.daixinlian.com, you can write the following:
+Update the roles list ```pillar/nodes.sls``` base on your deployment plan, for example if you want to run all the ldap related on bd003.mmj.com, you can write the following:
 
 ```
   role-map:
@@ -139,7 +139,7 @@ Update the roles list ```pillar/nodes.sls``` base on your deployment plan, for e
       - 'ldap-server'
       - 'php-ldap-admin'
   nodes:
-    bd003.daixinlian.com:
+    bd003.mmj.com:
       roles:
         - ldap
 ```
@@ -147,7 +147,7 @@ Update the roles list ```pillar/nodes.sls``` base on your deployment plan, for e
 And you can run the command to setup your ldap environment:
 
 ```
-salt 'bd003.daixinlian.com' -G 'roles:ldap'
+salt 'bd003.mmj.com' -G 'roles:ldap'
 ```
 
 ## Deployment
@@ -220,7 +220,7 @@ $ salt -G 'roles:kafka' state.sls kafka devops
 
 * Change the Gitlab default password of root user
 
-Point your browser to [Gitlab](https://bd003.daixinlian.com:10443/) and login using the default username and password:
+Point your browser to [Gitlab](https://bd003.mmj.com:10443/) and login using the default username and password:
 
     username: root
     password: 5iveL!fe
@@ -230,12 +230,12 @@ The Gitlab will require you to change the default password.
 * Create organization memeber:
   - Create ldap.ldif, you can reference the [ldap.ldif.example](src/scripts/ldap.ldif.example) as an example, and run command to initialize the organization memebers on *bd003*
 ```
-$ ldapadd -h 192.168.10.18 -x -D "cn=admin,dc=daixinlian,dc=com" -f ldap.ldif.example -W
+$ ldapadd -h 192.168.10.18 -x -D "cn=admin,dc=mmj,dc=com" -f ldap.ldif.example -W
 ```
-  - You can login the [Ldap web admin page](https://bd002.daixinlian.com:11443) to change your password, the login DN should be like: *cn=david,ou=people,dc=daixinlian,dc=com*, the login DN of admin should be like: *cn=admin,dc=daixinlian,dc=com*.
+  - You can login the [Ldap web admin page](https://bd002.mmj.com:11443) to change your password, the login DN should be like: *cn=david,ou=people,dc=mmj,dc=com*, the login DN of admin should be like: *cn=admin,dc=mmj,dc=com*.
 
 * Create gerrit admin account:
-  - After the gerrit container deploy, you need login the [Gerrit web admin page](http://bd002.daixinlian.com:28080) with the 'idevops-ci' user account and password in ldap, it will be added into the gerrit administrator group since it's the first login user.
+  - After the gerrit container deploy, you need login the [Gerrit web admin page](http://bd002.mmj.com:28080) with the 'idevops-ci' user account and password in ldap, it will be added into the gerrit administrator group since it's the first login user.
   - Add 'idevops-ci' ssh public key into gerrit, you can find it under the 
 
 * Enable ldap based authentication in jenkins Configure Global Security
@@ -264,10 +264,10 @@ spark://<your spark master ip>:7077 \
 
 ## Useful Link after deployment:
 
-* <a href="https://bd002.daixinlian.com:11443/" target="_blank">Ldap web admin</a>
-* <a href="https://bd003.daixinlian.com:10443/" target="_blank">Gitlab web UI</a>
-* <a href="http://bd003.daixinlian.com:28080/" target="_blank">Gerrit web UI</a>
-* <a href="http://bd002.daixinlian.com:18080/jenkins" target="_blank">Jenkins web UI</a>
+* <a href="https://bd002.mmj.com:11443/" target="_blank">Ldap web admin</a>
+* <a href="https://bd003.mmj.com:10443/" target="_blank">Gitlab web UI</a>
+* <a href="http://bd003.mmj.com:28080/" target="_blank">Gerrit web UI</a>
+* <a href="http://bd002.mmj.com:18080/jenkins" target="_blank">Jenkins web UI</a>
 
 ## Troubleshooting
 
@@ -276,5 +276,5 @@ spark://<your spark master ip>:7077 \
   - You can check the log file ```/var/log/salt/master``` on salt master or ```/var/log/salt/minion``` on salt client.
   - Run ```salt-run manage.status``` to check the salt client status.
   - Run ```salt -G 'roles:ldap' test.ping``` to check minion's status.
-  - Run ```salt-key -d bd003.daixinlian.com``` to delete unnecessary minion
+  - Run ```salt-key -d bd003.mmj.com``` to delete unnecessary minion
   - Run ```salt -G 'roles:kafka' cmd.run 'docker stop kafka'``` to stop kafka container
